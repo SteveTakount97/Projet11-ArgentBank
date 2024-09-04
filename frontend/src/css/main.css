@@ -104,6 +104,9 @@ body {
   margin: 7px;
   border-radius: 7px;
 }
+.second{
+  background-color: rgba(231, 229, 229, 0.767);
+}
 .larg{
   width: 100px;
 }

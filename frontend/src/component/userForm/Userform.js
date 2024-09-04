@@ -79,7 +79,7 @@ const UserForm = ({ initialData, onCancel }) => {
   return (
     <div>
       <form>
-        <h2>Edit User Info</h2>
+        <h2>Edit userName</h2>
         <div>
           <label htmlFor="username">Username:</label>
           <input
@@ -97,9 +97,10 @@ const UserForm = ({ initialData, onCancel }) => {
             type="text"
             id="firstName"
             name="firstName"
-            className='first'
+            className='first second'
             value={formData.firstName}
             onChange={handleChange}
+            disabled
           />
         </div>
         <div>
@@ -108,9 +109,10 @@ const UserForm = ({ initialData, onCancel }) => {
             type="text"
             id="lastName"
             name="lastName"
-            className='first'
+            className='first second'
             value={formData.lastName}
             onChange={handleChange}
+            disabled
           />
         </div>
         <div className='button-form'>
