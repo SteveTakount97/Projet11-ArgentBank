@@ -13,6 +13,7 @@ const NavBar = () => {
   const handleLogout = () => {
     localStorage.removeItem('authToken'); // Supprimer le token du localStorage
     dispatch(logout()); // Déclencher l'action de déconnexion
+    
 };
   return (
     <nav className="main-nav">

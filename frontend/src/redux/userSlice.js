@@ -27,6 +27,7 @@ const userSlice = createSlice({
             state.email = '';
             state.firstName = '';
             state.lastName = '';
+            state.token = '';
             state.isLoggedIn = false;
         },
         updateUser: (state, action) => {
