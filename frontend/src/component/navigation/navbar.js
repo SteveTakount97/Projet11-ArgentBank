@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../../redux/userSlice';
 
 const NavBar = () => {
-  const firstname = useSelector((state) => state.user.firstName);
+  const userName = useSelector((state) => state.user.userName);
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
   const dispatch = useDispatch();
 
@@ -29,7 +29,7 @@ const NavBar = () => {
           <>
             <NavLink className="main-nav-item" to="/user">
               <i className="fa fa-user-circle"></i>
-              {firstname}
+              {userName}
             </NavLink>
             <Link className="main-nav-item" to="/" onClick={handleLogout}>
               <i className="fa fa-sign-out"></i>
