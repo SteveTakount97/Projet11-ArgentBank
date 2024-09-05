@@ -13,7 +13,7 @@ const UserForm = ({ initialData, onCancel }) => {
     userName: initialData.userName,
     id: initialData.id,
   });
-  const userId = formData.id;
+
   
   const [successMessage, setSuccessMessage] = useState(''); // État pour gérer le message de succès
 
@@ -38,7 +38,7 @@ const UserForm = ({ initialData, onCancel }) => {
   }
 
     try {
-      const response = await fetch(`http://localhost:3001/api/v1/user/profile/${userId}`, {
+      const response = await fetch('http://localhost:3001/api/v1/user/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -1,19 +1,21 @@
 // src/components/NavBar.js
 
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../../redux/userSlice';
+
 
 const NavBar = () => {
   const userName = useSelector((state) => state.user.userName);
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
   const dispatch = useDispatch();
+  const navigate = useNavigate ();
 
   const handleLogout = () => {
     localStorage.removeItem('authToken'); // Supprimer le token du localStorage
     dispatch(logout()); // Déclencher l'action de déconnexion
-    
+    navigate('/SignUp');
 };
   return (
     <nav className="main-nav">

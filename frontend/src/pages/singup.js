@@ -73,7 +73,7 @@ function SignUp() {
 
       // Seconde requête : Récupérer les informations utilisateur
       const profileResponse = await fetch('http://localhost:3001/api/v1/user/profile', {
-          method: 'POST', 
+          method: 'GET', 
           headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${token}` // Utilisation du token pour l'authentification
