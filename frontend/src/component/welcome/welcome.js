@@ -25,9 +25,6 @@ function WelCome() {
   const handleSave = (newData) => {
     dispatch(updateUser(newData)); // Mise à jour des données utilisateur dans le store Redux
 
-
-
-
     setIsEditing(false); // Masquer le formulaire après sauvegarde
   };
 

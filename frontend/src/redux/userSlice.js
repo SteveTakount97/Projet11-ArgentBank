@@ -5,7 +5,6 @@ const initialState = {
     email: '',
     firstName: '',
     lastName: '',
-    id: '',
     userName: '',
     isLoggedIn: false,
 };
@@ -15,7 +14,6 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         login: (state, action) => {
-            state.id = action.payload.id;
             state.email = action.payload.email;
             state.token = action.payload.token
             state.firstName = action.payload.firstName; // poour stocker le prenom

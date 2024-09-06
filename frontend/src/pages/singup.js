@@ -65,8 +65,8 @@ function SignUp() {
      
 
       // Stocker le token dans localStorage
-      localStorage.setItem('authToken', token);
-      console.log('Stored Token in localStorage:', localStorage.getItem('authToken'));
+      sessionStorage.setItem('authToken', token);
+      console.log('Stored Token in localStorage:', sessionStorage.getItem('authToken'));
 
       // Afficher un message de succès
       alert("Connexion réussie!");
@@ -93,9 +93,6 @@ function SignUp() {
       const userName = userData.body.userName;
       console.log('Extracted username', userName);
 
-      const id = userData.body.id;
-      console.log( 'Extracted idUser', id);
-
       const firstName = userData.body.firstName;
       console.log('Extracted Firstname:', firstName);
 
@@ -106,12 +103,11 @@ function SignUp() {
       dispatch(login({
           email,  // ou d'autres informations que vous avez stockées
           token,
-          id,
           firstName,
           lastName,
           userName,
       }));
-      console.log('User data stored in Redux:', { email, token, firstName, lastName, id, userName });
+      console.log('User data stored in Redux:', { email, token, firstName, lastName, userName });
 
       // Redirection après la connexion réussie
       navigate('/User');
@@ -124,7 +120,7 @@ function SignUp() {
 
   return (
     <>
-      <main className="main bg-dark">
+      <main className="main bg-dark-singup">
         <section className="sign-in-content">
           <i className="fa fa-user-circle sign-in-icon"></i>
           <h1>Sign In</h1>

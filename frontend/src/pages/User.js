@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import WelCome from '../component/welcome/welcome';
 import Account from '../component/Account/Account';
+import { Link } from 'react-router-dom';
 
 function User() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem("authToken");
-    console.log("Token found:", token);
+    const token = sessionStorage.getItem("authToken");
+    
     if (token) {
       setIsAuthenticated(true);
     }
@@ -16,8 +17,10 @@ function User() {
   if (!isAuthenticated) {
     return (
       <div>
-        <WelCome />
-        <p style={{ textAlign: 'center', marginTop: '20px' }}>Veuillez vous connecter pour voir vos informations.</p>
+        <p style={{ textAlign: 'center', marginTop: '20px' }}>
+          Veuillez vous connecter pour voir vos informations--
+           <Link to="/SignUp">SingUp</Link>
+        </p>
       </div>
     );
   }

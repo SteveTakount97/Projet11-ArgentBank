@@ -11,7 +11,6 @@ const UserForm = ({ initialData, onCancel }) => {
     firstName: initialData.firstName,
     lastName: initialData.lastName,
     userName: initialData.userName,
-    id: initialData.id,
   });
 
   
